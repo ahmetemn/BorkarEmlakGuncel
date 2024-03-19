@@ -16,12 +16,18 @@ namespace BorkarEmlak.SERVICE.Abstract
 
         int Create(T entity);
 
+        Task<int> UpdateStatus(int id);
 
         int Update(T entity);
 
         Task<int> Delete(int id);
 
         Task<T> GetById(int id);
+
+        Task<List<T>> GetAll();
+
+        Task<List<T>> GetAllActive();
+
 
          
 

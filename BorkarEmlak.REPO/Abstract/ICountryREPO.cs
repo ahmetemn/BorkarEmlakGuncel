@@ -9,7 +9,7 @@ namespace BorkarEmlak.REPO.Abstract
 {
     public  interface ICountryREPO:IBaseEmlakREPO<Country>
     {
-
+        public List<Country> IlkOnGetir();
 
     }
 }

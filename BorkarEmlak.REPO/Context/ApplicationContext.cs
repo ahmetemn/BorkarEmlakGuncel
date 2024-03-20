@@ -18,7 +18,7 @@ namespace BorkarEmlak.REPO.Context
         {
 
 
-            optionsBuilder.UseSqlServer(@"Server=LAPTOP-12QQ6NC6\AHMET;Database=BorkarEmlak;Trusted_Connection=True;MultipleActiveResultSets=false;TrustServerCertificate=True;");
+            optionsBuilder.UseSqlServer(@"Server=DESKTOP-J56Q762;Database=BorkarEmlak;Trusted_Connection=True;MultipleActiveResultSets=false;TrustServerCertificate=True;");
 
 
         }

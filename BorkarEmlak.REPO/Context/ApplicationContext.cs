@@ -33,8 +33,6 @@ namespace BorkarEmlak.REPO.Context
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-
-
             base.OnModelCreating(builder);
             builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
             builder.Entity<IdentityUserLogin<string>>().HasKey(p => p.UserId);

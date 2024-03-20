@@ -37,7 +37,14 @@ namespace BorkarEmlakUI
             app.UseRouting();
 
             app.UseAuthorization();
+            app.MapAreaControllerRoute(
 
+               name: "Admin",
+               areaName: "Admin",
+               pattern: "Admin/{controller=AdminPanel}/{action=AdminSayfasi}/{id?}"
+
+
+               );
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");

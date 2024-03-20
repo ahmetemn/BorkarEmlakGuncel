@@ -26,10 +26,7 @@ namespace BorkarEmlak.REPO.Abstract
         Task<List<T>> GetWhereAsync(Expression<Func<T, bool>> expression);
 
 
-        List<T> GetAllWhere(Expression<Func<T, bool>> expression);
-
-
-
+    
 
         Task<TResult> GetFilteredFirstOrDefaultAsync<TResult>(
             Expression<Func<T, TResult>> select,

@@ -38,23 +38,39 @@ namespace BorkarEmlak.SERVICE.Concrate
 
         public async Task<List<T>> GetAllActive()
         {
-             return  await _context.GetAllWhere(x => x.Status != Status.Silindi);
+             return  await _context.GetWhereAsync(x => x.Status != Status.Silindi);
            
         }
 
-        public Task<T> GetById(int id)
+        public async  Task<T> GetById(int id)
         {
-            throw new NotImplementedException();
+            
+            var data =  await _context.GetByIdAsync(id);
+            return data; 
+
         }
 
         public int Update(T entity)
         {
-            throw new NotImplementedException();
+            entity.Status = Status.Güncellendi;
+            entity.UpdatedDate= DateTime.Now;   
+            return _context.Update(entity); 
+
+
         }
 
-        public Task<int> UpdateStatus(int id)
+        public  async Task<int> UpdateStatus(int id)
         {
-            throw new NotImplementedException();
+            var data = await _context.GetByIdAsync(id);
+            if (data.Status == Status.Eklendi)
+            {
+                data.Status = Status.Silindi    ;
+            }
+            else
+            {
+                data.Status = Status.Eklendi;
+            }
+            return _context.Update(data);
         }
     }
 }

@@ -100,10 +100,7 @@ namespace BorkarEmlak.REPO.Concrate
             return _applicationContext.SaveChanges();
         }
 
-        public List<T> GetAllWhere(Expression<Func<T, bool>> expression)
-        {
-            return _applicationContext.Set<T>().Where(expression).ToList();
-        }
+     
     }
 
 }
